@@ -1,15 +1,27 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
+posts = [
+   { 'author' : 'Yash Shah', 'Designation' : 'Software Engineer' } ,
+    {
+        'author' : 'Amy Bernard',
+    'Designation':'Software Engineer' },
+     {
+         'author' : 'Kieran Killian',
+    'Designation':'Software Engineer' } ,
+    {
+        'author' : 'Mark Davis',
+    'Designation':'Software Engineer' }
+]
 
 @app.route("/")
 def home():
-    return "<h1 style=font-famidddddddly: times;>This is the first commit!</h1> <p> You have only three lives. If you wish to continue, you need to form good habits! <br> <ul><li> Go strong </li> <li> Be bold </li>  <li> Take your chances </li></ul> "
+    return render_template('home.html' )
 
 
 @app.route("/about")
 def about():
-    return "< h3 style = font- family : helvetica ; > This is just gonna have to work < /h3 >"
+    return render_template('about.html', posts=posts, title ='About')
 
 
 @app.route("/documentation")

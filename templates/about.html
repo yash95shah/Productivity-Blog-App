@@ -8,18 +8,24 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         {% if title %}
-        <title>Home Page - {{ title }}</title>
+        <title>About Page - {{ title }}</title>
         {% else % }
-        <title> Home Page</title>
+        <title> About Page</title>
         <% endif %>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <h1>This is the Home Page</h1>
+        <h1>This is the About Page</h1>
         <p> Welcome! This is the first phase of the application and I'm really excited to see how it is going to progress!</p>
-        <button type="submit" value="Not Applicable" >Click me for fun!</button>
+        {% for post in posts %}
+       <h1> {{ post.author }} </h1>
+       <p>
+           {{ post.Designation }}
+       </p>
+       {% endfor %}
+
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
