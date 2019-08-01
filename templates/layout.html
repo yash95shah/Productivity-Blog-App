@@ -29,36 +29,21 @@
                           <div class="navbar-nav mr-auto">
                             <a class="nav-item nav-link" href="/" style ="font-family: 'sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1'; color:chartreuse" >home</a>
                             <a class="nav-item nav-link" href="/about" style ="font-family: 'sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf'; color:chartreuse" >about</a>
-                          </div>
+                            <a class="nav-item nav-link" href="/myProfile" style ="font-family: 'sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf'; color:chartreuse" >profile</a>
+                            <a class="nav-item nav-link" href="/about" style ="font-family: 'sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf'; color:chartreuse" >leaderboard</a>
+                            <a class="nav-item nav-link" href="/about" style ="font-family: 'sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf'; color:chartreuse" >chat</a>    
+                        </div>
                           <!-- Navbar Right Side -->
                           <div class="navbar-nav">
-                            <a class="nav-item nav-link" href="/login">Login</a>
-                            <a class="nav-item nav-link" href="/register">Register</a>
+                            <a class="nav-item nav-link" href="/login">login</a>
+                            <a class="nav-item nav-link" href="/register">register</a>
                           </div>
                         </div>
                       </div>
                     </nav>
                   </header>
-                  <main role="main" class="container">
-                        <div class="row">
-                          <div class="col-md-8">
-                            {% block content %}{% endblock %}
-                          </div>
-                          <div class="col-md-4">
-                            <div class="content-section">
-                              <h3>Our Sidebar</h3>
-                              <p class='text-muted'>You can put any information here you'd like.
-                                <ul class="list-group">
-                                  <li class="list-group-item list-group-item-light">Latest Posts</li>
-                                  <li class="list-group-item list-group-item-light">Announcements</li>
-                                  <li class="list-group-item list-group-item-light">Calendars</li>
-                                  <li class="list-group-item list-group-item-light">etc</li>
-                                </ul>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </main>
+                  
+                  {% block content %}{% endblock %}
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
