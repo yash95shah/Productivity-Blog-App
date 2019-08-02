@@ -7,30 +7,11 @@ import datetime
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-db = SQLAlchemy(app=app)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.database'
+database = SQLAlchemy(app=app)
 
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(20), unique=True, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-    image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
-    password = db.Column(db.String(60), nullable=False)
 
-    def __repr__(self):
-        
-        return f"User('{self.username}','{self.email}','{self.image_file}')"
-
-class Post(db.Model):
-    id =db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(120), nullable=False)
-    date_posted=db.Column(db.DateTime, nullable=False, default=datetime.time())
-    content = db.Column(db.Text, nullable=False)
-
-    def __repr__(self):
-        return f"Post('{self.title}', '{self.date_posted}' "
-
->>>>>>> Made the registration page fully functioning!
+from models import User, Post
 
 posts = [
     {
@@ -47,13 +28,7 @@ posts = [
     }
 ]
 
-<<<<<<< HEAD
-
-=======
-#create home route
->>>>>>> Made the registration page fully functioning!
 @app.route("/")
-@app.route("/home")
 def home():
     return render_template('home.html', posts=posts)
 
@@ -68,11 +43,7 @@ def register():
     form = RegistrationForm()
     if form.validate_on_submit():
         flash(f'Account created for {form.username.data}!', 'success')
-<<<<<<< HEAD
         return redirect(url_for('home'))
-=======
-        return redirect(url_for('register'))
->>>>>>> Made the registration page fully functioning!
     return render_template('register.html', title='Register', form=form)
 
 
