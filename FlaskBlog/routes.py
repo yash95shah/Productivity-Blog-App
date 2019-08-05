@@ -1,8 +1,8 @@
 
-from Flask-Blog import app
+from FlaskBlog import app
 from flask import render_template, url_for, flash, redirect
-from Flask-Blog.models import User, Post
-from Flask-Blog.forms import RegistrationForm, LoginForm
+from FlaskBlog.models import User, Post
+from FlaskBlog.forms import RegistrationForm, LoginForm
 posts = [
     {
         'author': 'Yash Shah',
