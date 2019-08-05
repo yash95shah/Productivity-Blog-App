@@ -1,5 +1,5 @@
 from datetime import datetime
-from main import database
+from Flask-Blog import database
 
 
 class User(database.Model):
