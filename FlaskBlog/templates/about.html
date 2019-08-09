@@ -1,4 +1,12 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h1>About Page</h1>
+{% for user in users %}
+<article class="media content-section">
+  <div class="media-body">
+    
+    <h4><a class="article-content" href="home">{{ user.username }}</a></h4>
+    <p class="article-content">{{ user.email }}</p>
+  </div>
+</article>
+{% endfor %}
 {% endblock content %}
