@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class= "caption"><h2 class="header">
-  <b>Popular Blog Posts</b>  </h2></div>
+  <b>Posts by {{ user.username }}   ({{ posts.total }}  total)  </b>  </h2></div>
   
   <br>
       
@@ -22,9 +22,9 @@
       {% for page_num in posts.iter_pages(left_edge=2, left_current =2, right_edge=2, right_current=2) %}
       {% if page_num %}
           {% if posts.page == page_num %}
-          <a class="btn btn-info mb-4" href="{{ url_for('home', page=page_num)}}"> {{ page_num }}</a>
+          <a class="btn btn-info mb-4" href="{{ url_for('user_posts', username=user.username)}}"> {{ page_num }}</a>
           {% else%}
-          <a class="btn btn-outline-info mb-4" href="{{ url_for('home', page=page_num)}}"> {{ page_num }}</a>
+          <a class="btn btn-outline-info mb-4" href="{{ url_for('user_posts', username=user.username)}}"> {{ page_num }}</a>
           {% endif %}
       {% else %}
           ...    
